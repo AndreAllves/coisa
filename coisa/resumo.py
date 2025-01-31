@@ -11,30 +11,30 @@ class Resumo:
         self.resumos[posicao] = resumo
         self.i += 1
 
-        def pega_resumo(self):
-            out = []
-            resumos_validos = self.conta()
+    def pega_resumo(self):
+        out = []
+        resumos_validos = self.conta()
 
-            for i in range(0, resumos_validos):
-                out[i] = self.temas[i] + " | " + self.resumos[i]
+        for i in range(0, resumos_validos):
+            out[i] = self.temas[i] + " | " + self.resumos[i]
 
-            return out
+        return out
 
-        def impreme_resumos(self):
-            total_de_resumos = conta()
-            out = f'- {total_de_resumos} resumo(s) cadastrado(s)\n'
+    def impreme_resumos(self):
+        total_de_resumos = self.conta()
+        out = f'- {total_de_resumos} resumo(s) cadastrado(s)\n'
 
-            for i in range(0, total_de_resumos):
-                out += self.temas[i] + ' | ' + self.resumos[i] + '\n'
+        for i in range(0, total_de_resumos):
+            out += self.temas[i] + ' | ' + self.resumos[i] + '\n'
 
-            return out
+        return out
 
-        def conta(self):
-            return self.i if self.i < self.numero_de_resumos else self.numero_de_resumos
+    def conta(self):
+        return self.i if self.i < self.numero_de_resumos else self.numero_de_resumos
 
-        def tem_resumo(self, tema):
-            total_de_resumos = conta()
-            for i in range(0, total_de_resumos):
-                if tema == self.temas[i]:
-                    return True
-            return False
+    def tem_resumo(self, tema):
+        total_de_resumos = self.conta()
+        for i in range(0, total_de_resumos):
+            if tema == self.temas[i]:
+                return True
+        return False
